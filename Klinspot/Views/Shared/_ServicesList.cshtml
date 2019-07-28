@@ -1,0 +1,44 @@
+﻿@model List <Service>
+@{
+    ViewBag.Title = "_ServicesList";
+}
+
+<!-- Start:Our Services Section
+==================================================-->
+<section class="service-section">
+    <div class="container">
+        <!-- Start: Heading -->
+        <div class="base-header">
+            <h3>Our <span class="ylow_clr"> services </span> </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Phasellus id lectus quis dui euismod con placerat massa nec elit egestas efficitur. </p>
+        </div>
+        <!-- End: Heading -->
+        <div class="row timeline_posts">
+            @foreach (var sr in Model)
+            {
+                <div class="col-md-4 col-xs-12">
+                    <!-- about-item -->
+                    <div class="service-item">
+                        <div class="icon-serv">
+                            <img src="~/Uploads/@sr.Icon" alt="@sr.Name">
+                        </div>
+                        <h5 class="serv-left">@sr.Name</h5>
+                        <div class="serv-info">@sr.Desc</div>
+                      <a href="@Url.Action("details", "services", new {slug=sr.Slug})">
+
+                      </a>
+                    </div>
+                    <!-- End: .about-item -->
+                </div>
+            }
+
+           
+        
+         
+        </div>
+        <!-- /. row -->
+    </div>
+    <!-- /. container -->
+</section>
+<!-- End:Our Services Section
+==================================================-->

@@ -1,0 +1,32 @@
+﻿@model AboutText
+@{
+    ViewBag.Title = "_AboutText";
+}
+
+<!-- Start: About Section
+==================================================-->
+<section class="about-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="abut_title">
+                    <h3>@Model.Title </h3>
+                   @Html.Raw(Model.Text)
+                </div>
+               
+            </div>
+            <div class="col-md-6">
+                <div class="about_box">
+                    <a class="about_box_img" href="about.html">
+                        <img class="@Url.Action("index","about")" src="~/Uploads//@Model.Photo" alt="">
+                    </a>
+                </div>
+            </div>
+            <!-- /. row -->
+        </div>
+    </div>
+    <!-- /. container -->
+</section>
+
+<!-- End: About Section
+==================================================-->
