@@ -76,3 +76,5 @@ C:\Users\user\source\repos\Klinspot\Klinspot\obj\Debug\Klinspot.csproj.GenerateR
 C:\Users\user\source\repos\Klinspot\Klinspot\obj\Debug\Klinspot.Migrations.ChangeDecsMaxLenhgt.resources
 C:\Users\user\source\repos\Klinspot\Klinspot\obj\Debug\Klinspot.Migrations.addservicedesc.resources
 C:\Users\user\source\repos\Klinspot\Klinspot\obj\Debug\Klinspot.Migrations.addabouttexttext.resources
+C:\Users\user\source\repos\Klinspot\Klinspot\obj\Debug\Klinspot.Migrations.update.resources
+C:\Users\user\source\repos\Klinspot\Klinspot\obj\Debug\Klinspot.Migrations.frfr.resources

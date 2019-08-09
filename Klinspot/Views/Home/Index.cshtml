@@ -3,197 +3,72 @@
 @{
     ViewBag.Title = "Index";
 }
-
-
-
-
-<!-- Start: Slides  -->
-<div class="slides_wrapper">
     <div class="slider_home">
-
-        @foreach (var sl in Model.Slides)
+        @foreach (var slide in Model.Slides)
         {
-
-            <div class="single_slider slide_bg_1" style="background-image:url('/Uploads/@sl.Photo')">
+            <div class="single_slider slide_bg_2" style="background-image:url('/Uploads/@slide.Photo')">
                 <div class="slider_item_tb">
                     <div class="slider_item_tbcell">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-7 col-xs-12">
-                                    <h2>
-                                        <span class="slide_st1">
-                                            @sl.Title
-                                        </span>
-                                    </h2>
-                                    <p>@sl.Desc</p>
-                                    @if (!string.IsNullOrEmpty(sl.BtnText))
+                                    <h2><span class="slide_st1">@slide.Title</span></h2>
+                                    <p>@slide.Desc</p>
+                                    @if (!string.IsNullOrEmpty(slide.BtnText))
                                     {
                                         <div class="slider_btn">
-                                            <a href="@sl.BtnUrl" class="more-link slider_btn_one">@sl.BtnText</a>
-                                          
+                                            <a href="@slide.BtnUrl" class="more-link slider_btn_one">@slide.BtnText</a>
                                         </div>
                                     }
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         }
 
     </div>
 </div>
+
+
 <!-- Start: Promo Section
 ==================================================-->
 <div class="promo-area">
     <div class="container">
         <div class="promo-container">
             <div class="row">
-                @foreach (var pr in Model.Promos)
+                @foreach (var prm in Model.Promos)
                 {
                     <div class="col-md-4 col-sm-4 ">
                         <div class="promo-wrap">
                             <div class="promo-icon">
-                                <img src="~/Uploads/@pr.Icon" alt="@pr.Name">
+                                <img src="~/Uploads/@prm.Icon" alt="@prm.Name">
                             </div>
                             <div class="promo-content">
-                                <h4>@pr.Name</h4>
-                                <p>@pr.Desc</p>
+                                <h4>@prm.Name</h4>
+                                <p>@prm.Desc</p>
                             </div>
                         </div>
                     </div>
-                    
                 }
-
             </div>
         </div>
     </div>
 </div>
-
 <!-- End: Promo Section
 ==================================================-->
+
 @{
     Html.RenderPartial("~/Views/Shared/_AboutText.cshtml", model: Model.AboutText);
+    
 }
-<!-- Start:Our Services Section
-==================================================-->
-<section class="service-section">
-    <div class="container">
-        <!-- Start: Heading -->
-        <div class="base-header">
-            <h3>Our <span class="ylow_clr"> services </span> </h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Phasellus id lectus quis dui euismod con placerat massa nec elit egestas efficitur. </p>
-        </div>
-        <!-- End: Heading -->
-        <div class="row timeline_posts">
-            <div class="col-md-4 col-xs-12">
-                <!-- about-item -->
-                <div class="service-item">
-                    <div class="icon-serv">
-                        <img src="~/Public/images/promo_icon1.png" alt="image">
-                    </div>
-                    <h5 class="serv-left">Constraction Cleaning</h5>
-                    <div class="serv-info">The purpose of writing a business is to actually research and find out more about the business</div>
-                    <span class="serv-learn">More</span><i class="arrow_right"></i>
-                </div>
-                <!-- End: .about-item -->
-            </div>
-            <div class="col-md-4 col-xs-12">
-                <!-- about-item -->
-                <div class="service-item">
-                    <div class="icon-serv">
-                        <img src="~/Public/images/promo_icon3.png" alt="image">
-                    </div>
-                    <h5 class="serv-left">Commercial Cleaning</h5>
-                    <div class="serv-info">The purpose of writing a business is to actually research and find out more about the business </div>
-                    <span class="serv-learn">More</span><i class="arrow_right"></i>
-                </div>
-                <!-- End: .about-item -->
-            </div>
-            <div class="col-md-4 col-xs-12">
-                <!-- about-item -->
-                <div class="service-item">
-                    <div class="icon-serv">
-                        <img src="~/Public/images/promo_icon4.png" alt="image">
-                    </div>
-                    <h5 class="serv-left">Living Area Cleaning</h5>
-                    <div class="serv-info">The purpose of writing a business is to actually research and find out more about the business</div>
-                    <span class="serv-learn">More</span><i class="arrow_right"></i>
-                </div>
-                <!-- End: .about-item -->
-            </div>
-            <div class="col-md-4 col-xs-12">
-                <!-- about-item -->
-                <div class="service-item">
-                    <div class="icon-serv">
-                        <img src="~/Public/images/promo_icon2.png" alt="image">
-                    </div>
-                    <h5 class="serv-left">Residential Cleaning</h5>
-                    <div class="serv-info">The purpose of writing a business is to actually research and find out more about the business </div>
-                    <span class="serv-learn">More</span><i class="arrow_right"></i>
-                </div>
-                <!-- End: .about-item -->
-            </div>
-            <div class="col-md-4 col-xs-12">
-                <!-- about-item -->
-                <div class="service-item">
-                    <div class="icon-serv">
-                        <img src="~/Public/images/promo_icon5.png" alt="image">
-                    </div>
-                    <h5 class="serv-left">Spring Cleaning</h5>
-                    <div class="serv-info">The purpose of writing a business is to actually research and find out more about the business</div>
-                    <span class="serv-learn">More</span><i class="arrow_right"></i>
-                </div>
-
-                <!-- End: .about-item -->
-            </div>
-            <div class="col-md-4 col-xs-12">
-                <!-- about-item -->
-                <div class="service-item">
-                    <div class="icon-serv">
-                        <img src="~/Public/images/promo_icon6.png" alt="image">
-                    </div>
-                    <h5 class="serv-left">Office Cleaning</h5>
-                    <div class="serv-info">The purpose of writing a business is to actually research and find out more about the business</div>
-                    <span class="serv-learn">More</span><i class="arrow_right"></i>
-                </div>
-                <!-- End: .about-item -->
-            </div>
-        </div>
-        <!-- /. row -->
-    </div>
-    <!-- /. container -->
-</section>
-<!-- End:Our Services Section
-==================================================-->
-<!-- Start: Choose Us Section
-==================================================-->
-<section class="video_section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-xs-12">
-                <div class="video_wrp">
-                    <h3>Find Out All Cleaning Service We Offer.</h3>
-                    <h4>Get Your Quote or Call: (0050) 123-356-689</h4>
-                    <a href="@ViewBag.Setting.Url" class="animated_play_btn"><i class="fa fa-play"></i></a>
-                </div>
-            </div>
-            <!-- /.chooseus-warper-->
-        </div>
-        <!-- /. row -->
-    </div>
-    <!-- /. container -->
-</section>
-<!-- End: Choose Us Section
-==================================================-->
-@{
-    Html.RenderPartial("~/Views/Shared/_TeamMembers.cshtml");
+@{ 
+    Html.RenderPartial("~/Views/Shared/_TeamMembers.cshtml", model: Model.Members);
 }
 
 @{
-    Html.RenderPartial("~/Views/Shared/_ServicesList.cshtml", model:Model.Services);
+    Html.RenderPartial("~/Views/Shared/_ServicesList.cshtml", model: Model.Services);
 }
 <!-- Start: Work Section
 ==================================================-->
@@ -208,110 +83,47 @@
             <a href="gallery.html" class="more-link">More Work</a>
         </div>
         <!-- Start: Work filter -->
+
         <ul class="projects-titles">
             <li class="active" data-filter="*">
                 <span>all work</span>
             </li>
-            <li data-filter=".web">
-                <span>carpet</span>
-            </li>
-            <li data-filter=".design">
-                <span>floor</span>
-            </li>
-            <li data-filter=".graphics">
-                <span>house</span>
-            </li>
-            <li data-filter=".photoshop">
-                <span>office</span>
-            </li>
-            <li data-filter=".photoshop">
-                <span>pool</span>
-            </li>
+            @foreach (var category in Model.Categories)
+            {
+                <li data-filter=".@category.Name.Replace(' ', '-').ToLower()">
+                    <span>@category.Name</span>
+                </li>
+            }
+
+          
         </ul>
-        <!-- End: Work filter -->
+       
         <div class="row projects-list">
-            <div class="col-md-4 col-xs-12 web graphics">
-                <div class="single-project-item">
-                    <div class="project-hover">
-                        <div class="project_cnt">
-                            <a class="project-link" href="images/work-1.jpg"><i class="icon-glyph-26"></i></a>
-                            <h6><a href="gallery.html">Office cleaning</a></h6>
-                            <span><a href="single-gallery.html">category : cleaning</a></span>
+            @foreach (var project in Model.Projects)
+            {
+                <div class="col-md-4 col-xs-12 @project.Category.Name.Replace(' ', '-').ToLower()">
+                    <div class="single-project-item" style=" background-image:url(Uploads/@project.Photo)" >
+                        <div class="project-hover">
+                            <div class="project_cnt">
+                                <a class="project-link" href="~/Uploads/@project.Photo"><i class="icon-glyph-26"></i></a>
+                                <h6><a href="gallery.html">@project.Name</a></h6>
+                                <span><a href="single-gallery.html">category : @project.Category.Name</a></span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- End: Work Item 1 -->
-            <div class="col-md-4 col-xs-12 development photoshop">
-                <div class="single-project-item project-bg-2">
-                    <div class="project-hover">
-                        <div class="project_cnt">
-                            <a class="project-link" href="images/work-2.jpg"><i class="icon-glyph-26"></i></a>
-                            <h6><a href="gallery.html">House cleaning</a></h6>
-                            <span><a href="single-gallery.html">category : cleaning</a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End: Work Item 2 -->
-            <div class="col-md-4 col-xs-12 web design">
-                <div class="single-project-item project-bg-3">
-                    <div class="project-hover">
-                        <div class="project_cnt">
-                            <a class="project-link" href="images/work-3.jpg"><i class="icon-glyph-26"></i></a>
-                            <h6><a href="gallery.html">Floor cleaning</a></h6>
-                            <span><a href="single-gallery.html">category : cleaning</a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End: Work Item 3 -->
-            <div class="col-md-4 col-xs-12 design web development">
-                <div class="single-project-item project-bg-4">
-                    <div class="project-hover">
-                        <div class="project_cnt">
-                            <a class="project-link" href="images/work-4.jpg"><i class="icon-glyph-26"></i></a>
-                            <h6><a href="gallery.html">Pool cleaning</a></h6>
-                            <span><a href="single-gallery.html">category : cleaning</a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End: Work Item 4 -->
-            <div class="col-md-4 col-xs-12 web graphics">
-                <div class="single-project-item project-bg-5">
-                    <div class="project-hover">
-                        <div class="project_cnt">
-                            <a class="project-link" href="images/work-5.jpg"><i class="icon-glyph-26"></i></a>
-                            <h6><a href="gallery.html">House cleaning</a></h6>
-                            <span><a href="single-gallery.html">category : cleaning</a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End: Work Item 5 -->
-            <div class="col-md-4 col-xs-12 design development web">
-                <div class="single-project-item project-bg-6">
-                    <div class="project-hover">
-                        <div class="project_cnt">
-                            <a class="project-link" href="images/work-6.jpg"><i class="icon-glyph-26"></i></a>
-                            <h6><a href="gallery.html">Home cleaning</a></h6>
-                            <span><a href="single-gallery.html">category : cleaning</a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End: Work Item 6 -->
+            }
+
         </div>
     </div>
 </section>
-<!-- End: Work Section
+
 @{
-    Html.RenderPartial("~/Views/Shared/_Testimonial.cshtml");
+    Html.RenderPartial("~/Views/Shared/_Testimonial.cshtml", model: Model.Clients);
 }
 
 @{
-    Html.RenderPartial("~/Views/Shared/_PriceList.cshtml");
+    Html.RenderPartial("~/Views/Shared/_PriceList.cshtml", model:Model.Packages);
 }
 <!-- Start: Our Blog Section
 ==================================================-->
@@ -320,63 +132,26 @@
         <!-- Start: Heading -->
         <div class="base-header">
             <h3>Latest <span class="ylow_clr"> News </span> </h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Phasellus id lectus quis dui euismod con placerat massa nec elit egestas efficitur. </p>
+         
         </div>
         <!-- End: Heading -->
         <div class="row">
             <div class="col-md-12">
                 <div class="owl-carousel owl-theme" id="blog_carousel">
-                    <div class="item">
-                        <div class="blog_box">
-                            <a class="blog_box_ovrlay" href="blog.html">
-                                <img class="img-responsive" src="~/Public/images/blog1.jpg" alt="">
-                            </a>
-                            <div class="blog_info_right">
-                                <a href="blog.html">
-                                    <h3>Benefits of summer cleaning tips how to clean office </h3>
-                                </a>
-                                <div class="blog_post_date">
-                                    <span>August 6, 2019</span>
-                                </div>
-                                <p>There are many cons ectet a ur elit at. Vestibulum necod ios suspe age a to ndisse cursus mal suada facime ...</p>
-                                <span class="blog_read"><a href="blog.html">Read more</a><i class="icon-right-open"></i></span>
-                            </div>
+                   
+                        @foreach (var blog in Model.Blogs)
+                        {
+                        <div class="item">
+
+                            @{
+                                Html.RenderPartial("~/Views/Shared/_BlogItem.cshtml", model: blog);
+                            }
+
                         </div>
+                        }
+                        
                     </div>
-                    <div class="item">
-                        <div class="blog_box">
-                            <a class="blog_box_ovrlay" href="blog.html">
-                                <img class="img-responsive" src="~/Public/images/blog2.jpg" alt="">
-                            </a>
-                            <div class="blog_info_right">
-                                <a href="blog.html">
-                                    <h3>Tips for cleaning house before moving out for house tips</h3>
-                                </a>
-                                <div class="blog_post_date">
-                                    <span>August 6, 2019</span>
-                                </div>
-                                <p>There are many cons ectet a ur elit at. Vestibulum necod ios suspe age a to ndisse cursus mal suada facime ...</p>
-                                <span class="blog_read"><a href="blog.html">Read more</a><i class="icon-right-open"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="blog_box">
-                            <a class="blog_box_ovrlay" href="blog.html">
-                                <img class="img-responsive" src="~/Public/images/blog3.jpg" alt="">
-                            </a>
-                            <div class="blog_info_right">
-                                <a href="blog.html">
-                                    <h3>Benefits of summer cleaning tips how to for house tips</h3>
-                                </a>
-                                <div class="blog_post_date">
-                                    <span>August 6, 2019</span>
-                                </div>
-                                <p>There are many cons ectet a ur elit at. Vestibulum necod ios suspe age a to ndisse cursus mal suada facime ...</p>
-                                <span class="blog_read"><a href="blog.html">Read more</a><i class="icon-right-open"></i></span>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -384,6 +159,6 @@
     </div>
     <!-- /. container -->
     @{
-        Html.RenderPartial("~/Views/Shared/_Partners.cshtml");
+        Html.RenderPartial("~/Views/Shared/_Partners.cshtml", model:Model.Partners);
     }
 </section>

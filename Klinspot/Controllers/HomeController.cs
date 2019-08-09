@@ -20,7 +20,7 @@ namespace Klinspot.Controllers
                 Services= _context.Services.OrderByDescending(s => s.Id).ToList(),
                 Members = _context.Members.Include("MembersLinks").OrderByDescending(o=> o.Id).ToList(),
                 Categories =_context.Categories.ToList(),
-                Projects = _context.Projects.OrderByDescending(o => o.Id).ToList(),
+                Projects = _context.Projects.Include("Category").OrderByDescending(o => o.Id).ToList(),
                 Packages = _context.Packages.OrderBy(p=> p.OrderBy).ToList(),
                 Clients = _context.Clients.OrderByDescending(c=>c.Id).ToList(),
                 Blogs = _context.Blogs.OrderByDescending(b=> b.Id).Take(6).ToList(),

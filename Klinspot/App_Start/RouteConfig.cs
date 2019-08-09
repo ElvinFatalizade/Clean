@@ -14,6 +14,12 @@ namespace Klinspot
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+               name: "NewsDetails",
+               url: "new/{slug}",
+               defaults: new { controller = "news", action = "details", slug = UrlParameter.Optional }
+           );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "home", action = "index", id = UrlParameter.Optional }

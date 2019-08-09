@@ -29,6 +29,7 @@ namespace Klinspot.ViewModels
 
         public List <Partner> Partners { get; set; }
 
+        public List <Setting> Settings { get; set; }
 
         public List <Service> Promos { get; set; }
     }

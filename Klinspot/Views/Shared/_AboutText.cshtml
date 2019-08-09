@@ -1,4 +1,4 @@
-﻿@model AboutText
+﻿
 @{
     ViewBag.Title = "_AboutText";
 }
@@ -17,8 +17,8 @@
             </div>
             <div class="col-md-6">
                 <div class="about_box">
-                    <a class="about_box_img" href="about.html">
-                        <img class="@Url.Action("index","about")" src="~/Uploads//@Model.Photo" alt="">
+                    <a class="about_box_img" href="@Url.Action("index", "about")">
+                        <img class="img-responsive"src="~/Uploads/@Model.Photo" alt="">
                     </a>
                 </div>
             </div>

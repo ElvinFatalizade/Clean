@@ -12,13 +12,14 @@ namespace Klinspot.Models
     {
         public int Id { get; set; }
 
-        [MaxLength(100)]
+        [MaxLength(300)]
         public string Title { get; set; }
 
         [MaxLength(100)]
         public string Photo { get; set; }
 
         [Column(TypeName ="ntext")]
+        [MaxLength(1000)]
         public string Text { get; set; }
     }
 }

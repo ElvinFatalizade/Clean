@@ -1,4 +1,4 @@
-﻿
+﻿@model List<Partner>
 @{
     ViewBag.Title = "_Partners";
 }
@@ -11,62 +11,18 @@
         <div class="row">
             <!-- client list  -->
             <div class="owl-carousel owl-theme col-md-12" id="client">
-                <!-- client 1 -->
-                <div class="item row">
-                    <div class="col-md-12">
-                        <div class="client-box">
-                            <img alt="client" src="~/Public/images/client-1.png">
+                @foreach (var partner in Model)
+                {
+                    <div class="item row">
+                        <div class="col-md-12">
+                            <div class="client-box">
+                                <a href="@partner.Url" target="_blank" class="client-box"></a>
+                                <img alt="client" src="~/Uploads/@partner.Photo">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- client 2 -->
-                <div class="item row">
-                    <div class="col-md-12">
-                        <div class="client-box">
-                            <img alt="client" src="~/Public/images/client-2.png">
-                        </div>
-                    </div>
-                </div>
-                <!-- client 3 -->
-                <div class="item row">
-                    <div class="col-md-12">
-                        <div class="client-box">
-                            <img alt="client" src="~/Public/images/client-3.png">
-                        </div>
-                    </div>
-                </div>
-                <!-- client 4 -->
-                <div class="item row">
-                    <div class="col-md-12">
-                        <div class="client-box">
-                            <img alt="client" src="~/Public/images/client-4.png">
-                        </div>
-                    </div>
-                </div>
-                <!-- client 5 -->
-                <div class="item row">
-                    <div class="col-md-12">
-                        <div class="client-box">
-                            <img alt="client" src="~/Public/images/client-5.png">
-                        </div>
-                    </div>
-                </div>
-                <!-- client 6 -->
-                <div class="item row">
-                    <div class="col-md-12">
-                        <div class="client-box">
-                            <img alt="client" src="~/Public/images/client-2.png">
-                        </div>
-                    </div>
-                </div>
-                <!-- client 7 -->
-                <div class="item row">
-                    <div class="col-md-12">
-                        <div class="client-box">
-                            <img alt="client" src="~/Public/images/client-4.png">
-                        </div>
-                    </div>
-                </div>
+                }
+               
             </div>
             <!--/ client list  -->
         </div>
